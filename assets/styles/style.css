@@ -244,8 +244,141 @@ section{
 .contact {
     background-color: #F6F1F1
 }
+.wave-group {
+    position: relative;
+  }
+  
+  .wave-group .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 300px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+    padding-bottom: 15px;
+    margin-top: 15px;
+  }
+  
+  .wave-group .input:focus {
+    outline: none;
+  }
+  
+  .wave-group .label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+  }
+  
+  .wave-group .label-char {
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * .05s);
+  }
+  
+  .wave-group .input:focus ~ label .label-char,
+  .wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #19A7CE;
+  }
+  
+  .wave-group .bar {
+    position: relative;
+    display: block;
+    width: 315px;
+  }
+  
+  .wave-group .bar:before,.wave-group .bar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #19A7CE;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+  }
+  
+  .wave-group .bar:before {
+    left: 50%;
+  }
+  
+  .wave-group .bar:after {
+    right: 50%;
+  }
+  
+  .wave-group .input:focus ~ .bar:before,
+  .wave-group .input:focus ~ .bar:after {
+    width: 50%;
+  }
 
+  .group {
+    position: relative;
+  }
+  
+.group label {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #999;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: #fff;
+    transition: all .3s ease;
+  }
+  
 
+.group textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    outline: 0;
+    width: 300px;
+    background-color: transparent;
+    margin-top: 20px;
+    resize: none;
+  }
+  
+.group textarea:placeholder-shown +label {
+    top: 10px;
+    background-color: transparent;
+  }
+  
+.group textarea:focus {
+    border-color: #19A7CE;
+  }
+  
+.group textarea:focus +label {
+    top: -10px;
+    left: 10px;
+    background-color: #F6F1F1;
+    color: #19A7CE;
+    font-weight: 600;
+    font-size: 14px;
+  }
+.submit{
+    background-color: #146C94;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    width: 320px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.submit:hover {
+    background-color: #19A7CE;
+    transition: all .3s ease;
+}
+  
 /*rodapé*/
 
 .footer {
@@ -388,4 +521,5 @@ section{
         display: flex;
         flex-direction: column;
         margin: auto;
+    }
 }
